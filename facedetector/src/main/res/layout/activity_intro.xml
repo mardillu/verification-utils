@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerificationInitActivity">
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:text="Start Verification"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:name="button_start"
+        android:textSize="16sp"
+        android:onClick="startAct"
+        android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:id="@+id/conten_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/notification_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_verification_check"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Successful Verification"
+                android:gravity="center"
+                android:textColor="#F9FAFF"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/farmer_image_large"
+            android:scaleType="centerCrop"
+            android:layout_below="@+id/header_layout"
+            android:layout_above="@+id/bottom_layout"/>
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:layout_marginBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/inner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/farmer_image_small"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="1.5dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@+id/farmer_image_small"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/farmer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:text="Ezekiel Sebastine" />
+
+                    <TextView
+                        android:id="@+id/phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ABB3BF"
+                        android:textSize="14sp"
+                        android:text="0240000000" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_proceed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:text="Proceed"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:name="btn_proceed"
+                android:onClick="proceedClicked"
+                android:textSize="16sp"
+                android:layout_below="@+id/inner"/>
+
+            <LinearLayout
+                android:id="@+id/button_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/inner"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_close"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:text="Close"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:name="btn_close"
+                    android:onClick="closeClicked"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_retry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:text="Retry"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:onClick="retryClicked"
+                    android:name="btn_retry"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

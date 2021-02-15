@@ -1,0 +1,12 @@
+*.class
+bin/
+gen/
+out/
+.gradle/
+build/
+local.properties
+proguard/
+captures/
+*.iml
+.idea/*
+.DS_Store

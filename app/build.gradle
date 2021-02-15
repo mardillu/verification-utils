@@ -1,0 +1,36 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.mardillu.faceapp"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "com.google.android.material:material:1.1.0"
+
+    // Camera
+    implementation "com.otaliastudios:cameraview:2.7.0"
+    implementation 'org.tensorflow:tensorflow-lite:2.2.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.2.0'
+    implementation 'org.tensorflow:tensorflow-android:1.13.1'
+
+    // Android face detector
+    //implementation "com.github.husaynhakeem:android-face-detector:2.0" // Remote
+    implementation project(":facedetector")
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+}
